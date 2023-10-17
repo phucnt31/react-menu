@@ -11,10 +11,19 @@ const App = () => {
     ...new Set(menu.map((item) => item.category)),
   ]);
 
+  const filterMenu = (category) => {
+    if (category === "all") {
+      setMenus(menu);
+      return;
+    }
+    const newMenu = menu.filter((item) => item.category === category);
+    setMenus(newMenu);
+  };
+
   return (
     <main className="menu">
       <Title text="our menu" />
-      <Categories categories={categories} />
+      <Categories categories={categories} filterMenu={filterMenu} />
       <Menu menus={menus} />
     </main>
   );
