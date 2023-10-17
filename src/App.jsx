@@ -14,8 +14,8 @@ const App = () => {
   return (
     <main className="menu">
       <Title text="our menu" />
-      <Menu menus={menus} />
       <Categories categories={categories} />
+      <Menu menus={menus} />
     </main>
   );
 };
